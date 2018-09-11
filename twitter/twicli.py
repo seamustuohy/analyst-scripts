@@ -26,10 +26,10 @@ if __name__ == "__main__":
         a = bird.get_profile_information(args.user)
         print json.dumps(a._json, sort_keys=True, indent=4, separators=(',', ': '))
     elif args.tweets:
-        a = bird.get_user_tweets(args.tweets, limit=1000)
+        a = bird.get_user_tweets(args.tweets)
         for page in a:
             # FIXME : improve this
-            print json.dumps(page, sort_keys=True, indent=4, separators=(',', ': '))
+            print json.dumps(page._json, sort_keys=True, indent=4, separators=(',', ': '))
     elif args.tweet:
         a = bird.get_tweet(args.tweet)
         print json.dumps(a._json, sort_keys=True, indent=4, separators=(',', ': '))
